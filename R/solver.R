@@ -3,7 +3,7 @@
 
 #' Create puzzle array
 #'
-#' \code{array.int} takes a 9x9 matrix representing a sudodu puzzle and creates
+#' \code{initArray} takes a 9x9 matrix representing a sudodu puzzle and creates
 #' a 9x9x9 logical array. This array contains the information about which
 #' numbers can and cannot go in particular places based on the initial values
 #' in the puzzle.
@@ -42,21 +42,11 @@
 #'  information to fill in the number k in the jth column yet.
 #'
 #' @examples
-#'  puzVec <- c(3, NA, NA, 2, 6, NA, NA, NA, 1,
-#'  6, NA, 8, NA, NA, NA, NA, NA, NA,
-#'  NA, NA, NA, NA, 7, 4, NA, NA, 8,
-#'  NA, NA, 3, 7, 2, 6, 4, NA, NA,
-#'  7, NA, NA, NA, 1, NA, NA, NA, NA,
-#'  NA, 5, NA, NA, NA, NA, 2, NA, NA,
-#'  NA, NA, NA, 3, NA, NA, NA, 7, NA,
-#'  2, 8, NA, NA, 5, NA, NA, NA, NA,
-#'  1, NA, NA, 4, NA, NA, NA, 2, NA)
-#'  b <- matrix(puzVec, nrow = 9, ncol = 9, byrow = TRUE)
-#'  array.int(b)
+#'  initArray(puzzle1)
 #'
 #' @export
 
-array.int <- function(puz){
+initArray <- function(puz){
   puzArr <- array(NA, c(9, 9, 9))
   for (i in 1:9){
     for (j in 1:9){
@@ -87,7 +77,7 @@ array.int <- function(puz){
 #'   placing \code{TRUE}/\code{FALSE} values in the appropriate places in the
 #'   puzzle array.
 #'
-#'   Function is used within \code{array.int} to initialize the puzzle array
+#'   Function is used within \code{initArray} to initialize the puzzle array
 #'   given the starting values of the sudoku puzzle.
 #'
 #' @examples
@@ -240,13 +230,13 @@ upPuz <- function(puzList, solution) {
 #'
 #' @return Takes as input a 9x9 representation of a sudoku puzzle and finds and
 #'   returns its solution. This function utilizes the functions
-#'   \code{array.int}, \code{logic1}, \code{logic2}, \code{upArray} recursively
+#'   \code{initArray}, \code{logic1}, \code{logic2}, \code{upArray} recursively
 #'   in order to find the solution for the puzzle
 #'
 #' @export
 
 solver <- function(puz){
-  puzList <- array.int(puz)
+  puzList <- initArray(puz)
   iterator <- function(puzList){
     solution <- logic1(puzList)
     if (!is.null(solution)){
