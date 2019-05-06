@@ -1,0 +1,13 @@
+Package: sudokusolvr
+Type: Package
+Title: Read and Solve Images of Sudoku Puzzles
+Version: 0.0.0.9000
+Authors@R: person("James", "Custer", email = "jamescuster0121@gmail.com", 
+  role = c("aut", "cre"))
+Description: These tools were developed to assist in creating a Shiny app which
+    will take images of sudoku puzzles, process the image into R useable data,
+    solve the puzzle, and return the results.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
