@@ -22,7 +22,7 @@ Returns an updated puzzle array. Given that k goes in the i x jth
   placing \code{TRUE}/\code{FALSE} values in the appropriate places in the
   puzzle array.
 
-  Function is used within \code{array.int} to initialize the puzzle array
+  Function is used within \code{initArray} to initialize the puzzle array
   given the starting values of the sudoku puzzle.
 }
 \description{
