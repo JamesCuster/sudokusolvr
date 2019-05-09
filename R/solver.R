@@ -1,6 +1,25 @@
 # These fucntions all work together to create a sudoku solver algorithm.
 
 
+#' Creates a sudokuPuzzle class object
+#'
+#' The function \code{sudokuPuzzle()} creates a sudoku puzzle object, which is a
+#' list that contains the sudoku puzzle as the first list item and a 9x9x9
+#' logical array which is used to find and represent the solutions to the puzzle
+#'
+#' @export
+
+sudokuPuzzle <- function(x){
+  if (!is.matrix(x)) {
+    stop("x is not a 9x9 matrix")
+  } else if (!all.equal(dim(x), c(9, 9))) {
+    stop("x is not a 9x9 matrix")
+  }
+  a <- initArray(x)
+  return(structure(list(puzzle = x, array = a), class = "sudokuPuzzle"))
+}
+
+
 #' Create puzzle array
 #'
 #' \code{initArray} takes a 9x9 matrix representing a sudodu puzzle and creates
@@ -56,7 +75,7 @@ initArray <- function(puz){
       }
     }
   }
-  return(list(puz, puzArr))
+  return(puzArr)
 }
 
 
