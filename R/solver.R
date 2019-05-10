@@ -7,7 +7,7 @@
 #' list that contains the sudoku puzzle as the first list item and a 9x9x9
 #' logical array which is used to find and represent the solutions to the puzzle
 #'
-#' @param x a 9x9 matrix representation of a sudoku puzzle. Puzzle cells which
+#' @param puz a 9x9 matrix representation of a sudoku puzzle. Puzzle cells which
 #'   do not contain a number should be coded as \code{NA}.
 #'
 #' @return A sudokuPuzzle object is a list object with two elements. The first
@@ -18,14 +18,14 @@
 #'
 #' @export
 
-sudokuPuzzle <- function(x){
-  if (!is.matrix(x)) {
-    stop("x is not a 9x9 matrix")
-  } else if (!all.equal(dim(x), c(9, 9))) {
-    stop("x is not a 9x9 matrix")
+sudokuPuzzle <- function(puz){
+  if (!is.matrix(puz)) {
+    stop("puz is not a 9x9 matrix")
+  } else if (!all.equal(dim(puz), c(9, 9))) {
+    stop("puz is not a 9x9 matrix")
   }
-  a <- initArray(x)
-  return(structure(list(puzzle = x, array = a), class = "sudokuPuzzle"))
+  a <- initArray(puz)
+  return(structure(list(puzzle = puz, array = a), class = "sudokuPuzzle"))
 }
 
 

@@ -4,10 +4,10 @@
 \alias{sudokuPuzzle}
 \title{Creates a sudokuPuzzle class object}
 \usage{
-sudokuPuzzle(x)
+sudokuPuzzle(puz)
 }
 \arguments{
-\item{x}{a 9x9 matrix representation of a sudoku puzzle. Puzzle cells which
+\item{puz}{a 9x9 matrix representation of a sudoku puzzle. Puzzle cells which
 do not contain a number should be coded as \code{NA}.}
 }
 \value{
