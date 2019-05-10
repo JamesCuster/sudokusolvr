@@ -2,27 +2,27 @@
 % Please edit documentation in R/solver.R
 \name{logic1}
 \alias{logic1}
-\title{Function to implement first logical reasoning to find solutions.}
+\title{Function to implement first logical reasoning to find solutions}
 \usage{
 logic1(puzList)
 }
 \arguments{
-\item{puzList}{is a list object which contains the 9x9 matrix representation
-of the sudoku puzzle as the first list element and the 9x9x9 puzzle array
-representing the solutions of the sudoku puzzle}
+\item{puzList}{a \code{sudokuPuzzle} object which contains a 9x9 matrix
+representation of a sudoku puzzle as the first list element and a 9x9x9
+logical array representing the solutions of the sudoku puzzle}
 }
 \value{
-The function searches the array for new solutions. Once a solution is
-  found, the function returns the \code{[i, j, k]} index where it occurs.
-  This function is meant to be used recursively inside of the \code{soler()}
-  function in conjunction with \code{upPuz} which takes the output of
-  \code{logic1()} as input to update the 9x9 puzzle matrix and the 9x9x9
-  puzzle array.
+The function searches the logical array of the sudokuPuzzle object
+  for new solutions. If a solution is found, the function returns the
+  \code{[i, j, k]} index where it occurs. If no new solution is found
+  \code{NULL} is returned. This function is meant to be used recursively
+  inside of the \code{solver} function in conjunction with \code{upPuz} which
+  takes the output of \code{logic1} as input to update the 9x9 puzzle matrix
+  and the 9x9x9 logical array of the sudokuPuzzle object.
 }
 \description{
 This function searches over the i rows and j columns of each kth dimension of
-the 9x9x9 puzzle array. It searches for rows and columns where there is only
-one \code{NA} value. If a row or column that meets this criteria is found,
-then the function returns the \code{[i, j, k]} indicies where this row or
-column occurs in the array.
+the 9x9x9 logical array. It searches for rows and columns where there is only
+one \code{NA} value. If a row or column that meets this criteria is found the
+function returns the \code{[i, j, k]} indicies where it occurs.
 }

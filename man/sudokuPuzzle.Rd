@@ -13,12 +13,12 @@ do not contain a number should be coded as \code{NA}.}
 \value{
 A sudokuPuzzle object is a list object with two elements. The first
   element is a 9x9 matrix representation of a sudoku puzzle. This is the same
-  as the input \code{x}. The second element is a 9x9x9 logical array which
+  as the input \code{puz}. The second element is a 9x9x9 logical array which
   stores information about what values can and cannot go into specific cells
-  of the sudoku puzzle. The array is created using \code(initArray).
+  of the sudoku puzzle. The array is created using \code{initArray}.
 }
 \description{
-The function \code{sudokuPuzzle()} creates a sudoku puzzle object, which is a
+The function \code{sudokuPuzzle} creates a sudoku puzzle object, which is a
 list that contains the sudoku puzzle as the first list item and a 9x9x9
-logical array which is used to find and represent the solutions to the puzzle
+logical array which is used to represent and find the solutions to the puzzle
 }

@@ -7,45 +7,43 @@
 initArray(puz)
 }
 \arguments{
-\item{puz}{9x9 matrix representing a sudoku puzzle (individual cells in the
-puzzle which do not have a number should be coded as NA).}
+\item{puz}{a 9x9 matrix representation of a sudoku puzzle. Puzzle cells which
+do not contain a number should be coded as \code{NA}.}
 }
 \value{
-Returns a list of 2. The first list object is the 9x9 matrix
- representation of the sudoku puzzle given as input in the function. The
- second object is a 9x9x9 logical array which captures all information
- regarding which numbers can and cannot go in each cell of the sudoku
- puzzle. The dimensions of the array are represented by i x j x k. The i and
- j dimensions correspond to the i x jth cell of the sudoku puzzle, and the
- kth dimension represents the values of 1-9 which can possibly go into the
- cells of the sudoku puzzle.
+Returns a 9x9x9 logical array which captures all information
+  regarding which numbers can and cannot go in each cell of the sudoku
+  puzzle. The dimensions of the array are represented by i, j, and k. The i
+  and j dimensions correspond to the \code{[i, j]} cell of the 9x9 sudoku
+  puzzle matrix, and the kth dimension represents the values of 1-9 which can
+  possibly go into the cells of the sudoku puzzle.
 
- The \code{[i, j, ]} elements of the array represent which values of
- 1-9 can possibly go into the \code{[i, j]} cell of the puzzle matrix.
- If there is 1 \code{TRUE} and 8 \code{FALSE} then the kth which is
- \code{TRUE} is the number that goes into the \code{[i, j]} cell of the
- sudoku puzzle. If there are 2 or more \code{NA}'s in these 9 elements, then
- there is not enough information to fill in the cell yet.
+  The \code{[i, j, ]} elements of the array represent which values of 1-9 can
+  possibly go into the \code{[i, j]} cell of the puzzle. If there is 1
+  \code{TRUE} and 8 \code{FALSE} then the kth element which is \code{TRUE} is
+  the number that goes into the \code{[i, j]} cell of the sudoku puzzle. If
+  there are 2 or more \code{NA}s in these 9 elements, then there is not
+  enough information to fill in the cell.
 
- The \code{[i, , k]} elements of the array represent where a particular value,
- k, can go in the ith row of the puzzle. Similar to above, if there is 1
- \code{TRUE} and 8 \code{FALSE} then the jth element which is \code{TRUE}
- gives the \code{[i, j]} cell of the sudoku puzzle is the number k. If there
- are 2 or more \code{NA}'s in these 9 elements, then there is not enough
- information to fill in the number k in the ith row yet.
+  The \code{[i, , k]} elements of the array represent where a particular
+  value, k, can go in the ith row of the puzzle. Similar to above, if there
+  is 1 \code{TRUE} and 8 \code{FALSE} then the jth element which is
+  \code{TRUE} gives the \code{[i, j]} cell of the sudoku puzzle is the number
+  k. If there are 2 or more \code{NA}s in these 9 elements, then there is not
+  enough information to fill in the number k in the ith row.
 
- The \code{[, j, k]} elements of the array represent where a particular value,
- k, can go in the jth column of the puzzle. Similar to above, if there is 1
- \code{TRUE} and 8 \code{FALSE} then the ith element which is \code{TRUE}
- gives the \code{[i, j]} cell of the sudoku puzzle is the number k. If there
- are 2 or more \code{NA}'s in these 9 elements, then there is not enough
- information to fill in the number k in the jth column yet.
+  The \code{[, j, k]} elements of the array represent where a particular
+  value, k, can go in the jth column of the puzzle. Similar to above, if
+  there is 1 \code{TRUE} and 8 \code{FALSE} then the ith element which is
+  \code{TRUE} gives the \code{[i, j]} cell of the sudoku puzzle is the number
+  k. If there are 2 or more \code{NA}'s in these 9 elements, then there is
+  not enough information to fill in the number k in the jth column.
 }
 \description{
-\code{initArray} takes a 9x9 matrix representing a sudodu puzzle and creates
-a 9x9x9 logical array. This array contains the information about which
-numbers can and cannot go in particular places based on the initial values
-in the puzzle.
+\code{initArray} takes a 9x9 matrix representation of a sudodu puzzle and
+creates a 9x9x9 logical array, which contains the information about which
+numbers can and cannot go in particular places based on the initial values in
+the puzzle.
 }
 \examples{
  initArray(puzzle1)

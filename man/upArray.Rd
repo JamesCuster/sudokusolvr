@@ -9,17 +9,17 @@ upArray(puzArr, i, j, k)
 \arguments{
 \item{puzArr}{9x9x9 array corresponding to the sudoku puzzle to be solved.}
 
-\item{i, j}{integer between 1 and 9 referrencing the i x jth element of the
-sudoku puzzle matrix and puzzle array}
+\item{i, j}{integer between 1 and 9 referrencing the \code{[i, j]} element of
+the sudoku puzzle matrix and puzzle array}
 
-\item{k}{integer between 1 and 9. Represents the value that goes in the i x
-jth cell of the puzzle matrix and is the third dimension index of the
-puzzle array.}
+\item{k}{integer between 1 and 9. Represents the value that goes in the
+\code{[i, j]} cell of the puzzle matrix and is the third dimension index of
+the puzzle array.}
 }
 \value{
-Returns an updated puzzle array. Given that k goes in the i x jth
-  element of the puzzle matrix, the puzzle array is updated accordingly by
-  placing \code{TRUE}/\code{FALSE} values in the appropriate places in the
+Returns an updated puzzle array. Given that k goes in the \code{[i,
+  j]} element of the puzzle matrix, the puzzle array is updated accordingly
+  by placing \code{TRUE}/\code{FALSE} values in the appropriate places in the
   puzzle array.
 
   Function is used within \code{initArray} to initialize the puzzle array

@@ -2,24 +2,24 @@
 % Please edit documentation in R/solver.R
 \name{logic2}
 \alias{logic2}
-\title{Function to implement second logical reasoning to update puzzle array.}
+\title{Function to implement second logical reasoning to update puzzle array}
 \usage{
 logic2(puzList)
 }
 \arguments{
-\item{puzList}{is a list object which contains the 9x9 matrix representation
-of the sudoku puzzle as the first list element and the 9x9x9 puzzle array
-representing the solutions of the sudoku puzzle}
+\item{puzList}{a \code{sudokuPuzzle} object which contains a 9x9 matrix
+representation of a sudoku puzzle as the first list element and a 9x9x9
+logical array representing the solutions of the sudoku puzzle}
 }
 \value{
 This function looks within each of the smaller 9 3x3 boxes within the
   sudoku puzzle to search if there is a number that must go in a particular
   row or column within the 3x3 box. If such a number is found this means that
   this number cannot go in any part of the row or column that is not within
-  the given 3x3 box. Therefore the function will update the corresponding row
-  or column in the array to reflect this.
+  the given 3x3 box. Therefore, the function will update the corresponding
+  row or column in the array to reflect this.
 }
 \description{
-This function looks for locations that a number can not go, and will update
-the cell in the 9x9x9 puzzle array from \code{NA} to \code{FALSE}
+This function looks for locations that a number cannot go, and will update
+the 9x9x9 logical array from \code{NA} to \code{FALSE}.
 }

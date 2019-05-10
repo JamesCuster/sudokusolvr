@@ -7,20 +7,20 @@
 upPuz(puzList, solution)
 }
 \arguments{
-\item{puzList}{is a list object which contains the 9x9 matrix representation
-of the sudoku puzzle as the first list element and the 9x9x9 puzzle array
-representing the solutions of the sudoku puzzle}
+\item{puzList}{a \code{sudokuPuzzle} object which contains a 9x9 matrix
+representation of a sudoku puzzle as the first list element and a 9x9x9
+logical array representing the solutions of the sudoku puzzle}
 
 \item{solution}{this is a vector of three numerics which are the index of the
 solution found}
 }
 \value{
-This function takes a puzzle list object and a solution produced from
-  \code{logic1} and updates the 9x9 puzzle matrix with the corresponding
+This function takes a sudokuPuzzle object and a solution produced
+  from \code{logic1} and updates the 9x9 puzzle matrix with the corresponding
   solution and places the correct \code{TRUE/FALSE} values in the
-  corresponding places in the 9x9x9 puzzle solution array
+  corresponding places in the 9x9x9 logical array
 }
 \description{
-Takes as input the puzzle list and a solution produced from the \code{logic1}
-function
+Takes as input the \code{sudokuPuzzle} object and a solution produced from
+the \code{logic1} function
 }

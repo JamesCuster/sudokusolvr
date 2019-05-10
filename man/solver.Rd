@@ -12,9 +12,9 @@ puzzle which are not filled in should be represented by \code{NA} values.}
 }
 \value{
 Takes as input a 9x9 representation of a sudoku puzzle and finds and
-  returns its solution. This function utilizes the functions
-  \code{initArray}, \code{logic1}, \code{logic2}, \code{upArray} recursively
-  in order to find the solution for the puzzle
+  returns its solution. This function utilizes the functions \code{initArray}
+  as well as \code{logic1}, \code{logic2}, \code{upArray} recursively in
+  order to find the solution for the puzzle
 }
 \description{
 Takes a 9x9 matrix that represents a sudoku puzzle and returns the puzzle
