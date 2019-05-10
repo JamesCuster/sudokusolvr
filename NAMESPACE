@@ -3,7 +3,6 @@
 export(initArray)
 export(logic1)
 export(logic2)
-export(multi)
 export(solver)
 export(sudokuPuzzle)
 export(upArray)
